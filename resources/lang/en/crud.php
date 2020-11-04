@@ -6,5 +6,7 @@ return [
     'noUpdates' => 'no updates' ,
     'cancel' => 'Cancel',
     'save' => 'Save' ,
-    'appName' => 'Projects Manager'
+    'appName' => 'Projects Manager' ,
+    'register' => 'Register' ,
+    'signIn' => 'Sign In'
 ];
