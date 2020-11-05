@@ -8,6 +8,9 @@
     </a> <a href="{{ route('project.notes', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
+    </a> <a href="{{ route('project.files', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-inbox"></i>
+    </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-danger btn-xs',

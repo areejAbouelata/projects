@@ -25,9 +25,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('projects', 'ProjectController', ["as" => 'admin']);
     Route::get('project/notes/{id}', 'ProjectController@notes')->name('project.notes');
+    Route::get('project/files/{id}', 'ProjectController@files')->name('project.files');
     Route::resource('clients', 'ClientController', ["as" => 'admin']);
     Route::resource('roles', 'RoleController',["as" => 'admin']);
     Route::resource('users', 'UserController');
+
 });
 
 Auth::routes();

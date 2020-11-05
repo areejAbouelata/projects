@@ -19,7 +19,8 @@ class ProjectDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'admin.projects.datatables_actions')->editColumn('client_id', function ($q) {
+        return $dataTable->addColumn('action', 'admin.projects.datatables_actions')
+            ->editColumn('client_id', function ($q) {
             return $q->client->name;
         })->editColumn('payment_updated_by', function ($q) {
             if ($q->created_at == $q->updated_at) {

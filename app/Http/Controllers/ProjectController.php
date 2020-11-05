@@ -162,6 +162,12 @@ class ProjectController extends AppBaseController
         $project = Project::findOrFail($id);
         return $noteDataTable->render('admin.notes.index');
 
+    }
+
+    public function files($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.projects.files' , compact('project')) ;
 
     }
 }

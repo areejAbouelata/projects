@@ -11,5 +11,7 @@ return [
         'start_date' => 'تاريخ البدأ' ,
         'payment_updated_by' => 'تم تعديل السعر بواسطة' ,
         'client_id' => 'العميل' ,
+        'files' => 'الملفات' ,
+
     ]
 ] ;

@@ -11,5 +11,6 @@ return [
         'start_date' => 'start date' ,
         'payment_updated_by' => 'payment updated by' ,
         'client_id' => 'client' ,
+        'files' => 'files' ,
     ]
 ] ;
