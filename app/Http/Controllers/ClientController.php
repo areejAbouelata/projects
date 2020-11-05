@@ -4,22 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Repositories\ClientRepository;
 use App\Repositories\UserRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
-use Illuminate\Support\Facades\DB;
-use Response;
-use Hash;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Laracasts\Flash\Flash;
 
-class UserController extends AppBaseController
+class ClientController extends Controller
 {
     /** @var $userRepository UserRepository */
     private $userRepository;
 
-    public function __construct(UserRepository $userRepo)
+    public function __construct(ClientRepository $userRepo)
     {
+        $this->middleware('permission:client-list|client-create|client-edit|client-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:client-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:client-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:client-delete', ['only' => ['destroy']]);
         $this->userRepository = $userRepo;
     }
 
@@ -34,7 +35,7 @@ class UserController extends AppBaseController
     {
         $users = $this->userRepository->all();
 
-        return view('users.index')->with('users', $users);
+        return view('admin.clients.index')->with('users', $users);
     }
 
     /**
@@ -44,8 +45,7 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        $roles = Role::pluck('name', 'name')->all();
-        return view('users.create', compact('roles'));
+        return view('admin.clients.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class UserController extends AppBaseController
 
         Flash::success('User saved successfully.');
 
-        return redirect(route('users.index'));
+        return redirect(route('admin.clients.index'));
     }
 
     /**
@@ -80,10 +80,10 @@ class UserController extends AppBaseController
         if (empty($user)) {
             Flash::error('User not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('admin.clients.index'));
         }
 
-        return view('users.show')->with('user', $user);
+        return view('admin.clients.show')->with('user', $user);
     }
 
     /**
@@ -100,11 +100,10 @@ class UserController extends AppBaseController
         if (empty($user)) {
             Flash::error('User not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('admin.clients.index'));
         }
-        $roles = Role::pluck('name', 'name')->all();
-        $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('users.edit', compact('user', 'userRole', 'roles'));
+
+        return view('admin.clients.edit')->with('user', $user);
     }
 
     /**
@@ -120,9 +119,9 @@ class UserController extends AppBaseController
         $user = $this->userRepository->find($id);
 
         if (empty($user)) {
-            Flash::error('User not found');
+            Flash::error('Client not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('admin.clients.index'));
         }
         $input = $request->all();
         if (!empty($input['password'])) {
@@ -131,11 +130,10 @@ class UserController extends AppBaseController
             unset($input['password']);
         }
         $user = $this->userRepository->update($input, $id);
-//        DB::table('model_has_roles')->where('model_id', $id)->delete();
-//        $user->assignRole($request->input('roles'));
+
         Flash::success('User updated successfully.');
 
-        return redirect(route('users.index'));
+        return redirect(route('admin.clients.index'));
     }
 
     /**
@@ -154,13 +152,13 @@ class UserController extends AppBaseController
         if (empty($user)) {
             Flash::error('User not found');
 
-            return redirect(route('users.index'));
+            return redirect(route('admin.clients.index'));
         }
 
         $this->userRepository->delete($id);
 
-        Flash::success('User deleted successfully.');
+        Flash::success('Client deleted successfully.');
 
-        return redirect(route('users.index'));
+        return redirect(route('admin.clients.index'));
     }
 }

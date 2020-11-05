@@ -7,8 +7,8 @@ return [
         'name' => 'name',
         'email' => 'email',
         'password' => 'Password' ,
-        'password_confirmation' => ' Password Confirmation'
-
+        'password_confirmation' => ' Password Confirmation' ,
+        'roles' => 'roles'
     ]
 
 ];

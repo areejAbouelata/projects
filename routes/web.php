@@ -22,9 +22,12 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('projects', 'ProjectController', ["as" => 'admin']);
     Route::get('project/notes/{id}', 'ProjectController@notes')->name('project.notes');
+    Route::resource('clients', 'ClientController', ["as" => 'admin']);
+    Route::resource('roles', 'RoleController',["as" => 'admin']);
+    Route::resource('users', 'UserController');
 });
 
 Auth::routes();
@@ -36,7 +39,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
-Route::resource('users', 'UserController')->middleware('auth');
+//Route::resource('users', 'UserController')->middleware('auth');
 
 
 Route::group(['prefix' => 'admin'], function () {

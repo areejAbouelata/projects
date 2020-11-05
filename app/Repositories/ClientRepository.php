@@ -5,13 +5,12 @@ namespace App\Repositories;
 use App\User;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class UserRepository
  * @package App\Repositories
  */
-class UserRepository extends BaseRepository
+class ClientRepository extends BaseRepository
 {
     /**
      * @var array
@@ -43,35 +42,18 @@ class UserRepository extends BaseRepository
     public function create($input)
     {
         $model = $this->model->newInstance($input);
+//        add type
+        $model->type = 'client';
         $model->save();
-        $model->assignRole($input['roles']);
+
         return $model;
     }
 
-//DB::table('model_has_roles')->where('model_id',$id)->delete();$user->assignRole($request->input('roles'));
-    public function update($input, $id)
+    public function all($search = [], $skip = null, $limit = null, $columns = ['*'])
     {
-        $query = $this->model->newQuery();
+        $query = $this->allQuery($search, $skip, $limit);
 
-        $model = $query->findOrFail($id);
-
-        $model->fill($input);
-
-        $model->save();
-
-//        DB::table('model_has_roles')->where('model_id', $id)->delete();
-
-        $model->assignRole($input['roles']);
-
-        return $model;
-    }
-    public function delete($id)
-    {
-        $query = $this->model->newQuery();
-
-        $model = $query->findOrFail($id);
-
-        return $model->delete();
+        return $query->where('type' , 'client')->get($columns);
     }
 
 }

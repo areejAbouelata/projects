@@ -11,3 +11,10 @@
 {{--    <a href="{{ route('admin.notes.index') }}"><i class="fa fa-edit"></i><span>@lang('models/notes.plural')</span></a>--}}
 {{--</li>--}}
 
+<li class="{{ Request::is('admin/clients*') ? 'active' : '' }}">
+    <a href="{{ route('admin.clients.index') }}"><i class="fa fa-edit"></i><span>  @lang('models/clients.plural')</span></a>
+</li>
+<li class="{{ Request::is('admin/roles*') ? 'active' : '' }}">
+    <a href="{{ url('admin/roles') }}"><i class="fa fa-edit"></i><span>@lang('models/roles.plural')</span></a>
+</li>
+

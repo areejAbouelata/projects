@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'plural' => 'المستخدمين',
-    'singular' => 'المستخدم',
+    'plural' => 'العملاء',
+    'singular' => 'العميل',
     'fields' => [
         'name' => 'الاسم',
         'email' => 'البريد الالكترونى',
         'password' => 'كلمة الدخول' ,
         'password_confirmation' => 'تاكيد كلمة الدخول'
-        , 'roles' => 'الصلاحيات'
+
     ]
 
 ];

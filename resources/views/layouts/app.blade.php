@@ -34,6 +34,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    <link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
 
     @yield('css')
 </head>
@@ -184,6 +185,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
 
 @stack('scripts')
 </body>

@@ -18,13 +18,8 @@
 
 <!-- Confirmation Password Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('password', __('models/users.fields.password_confirmation')) !!}
+      {!! Form::label('password', __('models/users.fields.password_confirmation')) !!}
     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
-</div>
-<div class="form-group col-sm-12">
-    {!! Form::label('roles', __('models/users.fields.roles').':') !!}
-
-    {!! Form::select('roles[]', $roles,[], array('class' => 'form-control select2','multiple')) !!}
 </div>
 
 <!-- Submit Field -->
@@ -32,12 +27,3 @@
     {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('users.index') !!}" class="btn btn-default">{{__('crud.cancel')}}</a>
 </div>
-@push('scripts')
-
-    <script>
-        $(function () {
-            //Initialize Select2 Elements
-            $(".select2").select2();
-        })
-    </script>
-@endpush

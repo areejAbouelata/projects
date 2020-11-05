@@ -18,6 +18,10 @@ class NoteController extends AppBaseController
 
     public function __construct(NoteRepository $noteRepo)
     {
+        $this->middleware('permission:note-list|note-create|note-edit|note-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:note-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:note-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:note-delete', ['only' => ['destroy']]);
         $this->noteRepository = $noteRepo;
     }
 
