@@ -69,7 +69,7 @@ class Project extends Model
 
     public function client()
     {
-        return $this->belongsTo(User::class, 'client_id');
+        return $this->belongsTo(Client::class, 'client_id');
     }
 
     public function notes()
@@ -79,6 +79,6 @@ class Project extends Model
 
     public function updatedBy()
     {
-        return $this->belongsTo(User::class , 'payment_updated_by');
+        return $this->belongsTo(User::class, 'payment_updated_by');
     }
 }

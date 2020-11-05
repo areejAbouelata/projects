@@ -23,8 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15712da4-4fd0-47f9-b956-b61c05f94e38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CreateClientRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateClientRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ClientRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ClientRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/plugins/select2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -184,11 +189,11 @@
       <recent name="$PROJECT_DIR$/public/dist/css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests" />
       <recent name="$PROJECT_DIR$/public/plugins/select2" />
       <recent name="$PROJECT_DIR$/resources/lang/en/models" />
       <recent name="$PROJECT_DIR$/resources/lang/ar/models" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/app/Repositories" />
     </key>
   </component>
   <component name="RunManager">
@@ -208,7 +213,7 @@
       <workItem from="1604323939961" duration="11064000" />
       <workItem from="1604396883321" duration="21820000" />
       <workItem from="1604483937017" duration="19577000" />
-      <workItem from="1604570315536" duration="6826000" />
+      <workItem from="1604570315536" duration="8522000" />
     </task>
     <servers />
   </component>
@@ -235,9 +240,9 @@
       <screen x="72" y="27" width="1608" height="1023" />
     </state>
     <state x="609" y="296" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1608.1023@72.27.1608.1023" timestamp="1604492070030" />
-    <state x="539" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1604578208542">
+    <state x="539" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1604583187350">
       <screen x="72" y="27" width="1608" height="1023" />
     </state>
-    <state x="539" y="251" width="672" height="678" key="search.everywhere.popup/72.27.1608.1023@72.27.1608.1023" timestamp="1604578208542" />
+    <state x="539" y="251" width="672" height="678" key="search.everywhere.popup/72.27.1608.1023@72.27.1608.1023" timestamp="1604583187350" />
   </component>
 </project>

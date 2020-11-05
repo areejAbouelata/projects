@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Client;
 use App\User;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,7 @@ class ClientRepository extends BaseRepository
      **/
     public function model()
     {
-        return User::class;
+        return Client::class;
     }
 
     public function create($input)

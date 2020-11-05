@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateClientRequest;
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateClientRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\ClientRepository;
 use App\Repositories\UserRepository;
@@ -55,7 +57,7 @@ class ClientController extends Controller
      *
      * @return Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateClientRequest $request)
     {
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
@@ -114,7 +116,7 @@ class ClientController extends Controller
      *
      * @return Response
      */
-    public function update($id, UpdateUserRequest $request)
+    public function update($id, UpdateClientRequest  $request)
     {
         $user = $this->userRepository->find($id);
 
