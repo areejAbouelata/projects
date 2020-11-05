@@ -28,7 +28,11 @@ class CreateClientRequest extends FormRequest
             'name' => 'required',
 
             'email' => 'required|email|unique:clients,email',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed' ,
+            'phone' => 'required',
+            'commercial_number' => 'required',
+            'nationality_id' => 'required',
+
 
         ];
 

@@ -28,7 +28,9 @@ class UpdateClientRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'email' => 'required|email|unique:clients,email,' . $id,
-            'password' => 'confirmed',
+            'phone' => 'required',
+            'commercial_number' => 'required',
+            'nationality_id' => 'required',
 
         ];
 
