@@ -13,7 +13,7 @@
 <!-- User Id Field -->
 <div class="form-group">
     {!! Form::label('user_id', __('models/notes.fields.user_id').':') !!}
-    <p>{{ $note->user_id }}</p>
+    <p>{{ $note->user->name }}</p>
 </div>
 
 <!-- Created At Field -->
