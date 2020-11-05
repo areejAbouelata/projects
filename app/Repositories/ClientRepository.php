@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\User;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class UserRepository
@@ -54,7 +55,25 @@ class ClientRepository extends BaseRepository
     {
         $query = $this->allQuery($search, $skip, $limit);
 
-        return $query->where('type' , 'client')->get($columns);
+        return $query->where('type', 'client')->get($columns);
+    }
+
+    public function delete($id)
+    {
+        $query = $this->model->newQuery();
+
+        $model = $query->findOrFail($id);
+        $projects = $model->projects()->get();
+        foreach ($projects as $project) {
+            $project->notes()->delete();
+            $files = $project->files()->get();
+            foreach ($files as $file) {
+                Storage::has($file->name) ? Storage::delete($file->name) : '';
+            }
+            $project->files()->delete();
+        }
+        $model->projects()->delete();
+        return $model->delete();
     }
 
 }

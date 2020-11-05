@@ -9,8 +9,12 @@ class Client extends Model
     public $fillable = [
         'name',
         'email',
+        'phone',
+        'commercial_number',
+        'nationality_id',
         'password',
         'type',
+
     ];
 
     public function projects()

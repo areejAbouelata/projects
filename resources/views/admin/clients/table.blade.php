@@ -4,7 +4,10 @@
         <tr>
             <th>{{__('models/clients.fields.name')}}</th>
             <th>{{__('models/clients.fields.email')}}</th>
-            <th colspan="3">{{__('crud.action')}}</th>
+            <th>{{__('models/clients.fields.phone')}}</th>
+            <th>{{__('models/clients.fields.commercial_number')}}</th>
+            <th>{{__('models/clients.fields.nationality_id')}}</th>
+            <th colspan="3">{{__('crud.action')}}</t    h>
         </tr>
         </thead>
         <tbody>
@@ -12,6 +15,9 @@
             <tr>
                 <td>{!! $user->name !!}</td>
                 <td>{!! $user->email !!}</td>
+                <td>{!! $user->phone !!}</td>
+                <td>{!! $user->commercial_number !!}</td>
+                <td>{!! $user->nationality_id !!}</td>
                 <td>
                     {!! Form::open(['route' => ['admin.clients.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

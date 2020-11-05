@@ -8,6 +8,8 @@
         @if(request()->route('id'))
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('admin.note.create' , [request()->route('id')]) }}">@lang('crud.add_new')</a>
+
+           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-right: 5px; margin-bottom: 5px" href="{{ route('admin.projects.index') }}">@lang('models/projects.plural')</a>
         </h1>
         @endif
     </section>

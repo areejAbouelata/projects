@@ -126,7 +126,8 @@ class NoteController extends AppBaseController
 
         Flash::success(__('messages.updated', ['model' => __('models/notes.singular')]));
 
-        return redirect(route('admin.notes.index'));
+        return redirect(route('project.notes' , [$note->project_id])  );
+
     }
 
     /**
@@ -150,6 +151,7 @@ class NoteController extends AppBaseController
 
         Flash::success(__('messages.deleted', ['model' => __('models/notes.singular')]));
 
-        return redirect(route('admin.notes.index'));
+        return redirect(route('project.notes' , [$note->project_id])  );
+
     }
 }

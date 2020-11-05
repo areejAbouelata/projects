@@ -10,6 +10,22 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- phone Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('phone', __('models/users.fields.phone')) !!}
+    {!! Form::text('phone', null, ['class' => 'form-control']) !!}
+</div>
+<!-- phone Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('commercial_number', __('models/users.fields.commercial_number')) !!}
+    {!! Form::text('commercial_number', null, ['class' => 'form-control']) !!}
+</div>
+<!-- phone Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('nationality_id', __('models/users.fields.nationality_id')) !!}
+    {!! Form::text('nationality_id', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', __('models/users.fields.password')) !!}

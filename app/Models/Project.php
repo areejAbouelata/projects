@@ -81,4 +81,9 @@ class Project extends Model
     {
         return $this->belongsTo(User::class, 'payment_updated_by');
     }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
 }

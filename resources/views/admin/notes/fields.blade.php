@@ -21,5 +21,8 @@
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
-    <a href="{{ route('admin.notes.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
+    @if(isset($id))
+
+    <a href="{{ route('project.notes' , $id) }}" class="btn btn-default">@lang('crud.cancel')</a>
+    @endif
 </div>

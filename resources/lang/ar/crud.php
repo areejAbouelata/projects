@@ -2,6 +2,7 @@
 
 return [
     'add_new' => 'اضاقة',
+    'back' => 'رجوع',
     'action' => 'الاجرائات',
     'noUpdates' => 'لم يتم التعديل' ,
     'cancel' => 'الغاء',

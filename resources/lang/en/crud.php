@@ -2,6 +2,7 @@
 
 return [
     'add_new' => 'Add',
+    'back' => 'back',
     'action' => 'actions',
     'noUpdates' => 'no updates' ,
     'cancel' => 'Cancel',
