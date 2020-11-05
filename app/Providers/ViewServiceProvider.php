@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Client;
 use App\User;
 
 use Illuminate\Support\ServiceProvider;
@@ -26,7 +27,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['admin.projects.fields'], function ($view) {
-            $userItems = User::pluck('name','id')->toArray();
+            $userItems = Client::pluck('name','id')->toArray();
             $view->with('userItems', $userItems);
         });
         //
