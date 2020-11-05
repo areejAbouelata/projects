@@ -72,13 +72,13 @@ class RoleController extends Controller
         $role->syncPermissions($request->input('permission'));
         Flash::success(__('messages.saved', ['model' => __('models/notes.singular')]));
 
-        return redirect()->route('roles.index')->with('success', 'Role updated successfully');
+        return redirect()->route('admin.roles.index')->with('success', 'Role updated successfully');
     }
 
     /*** Remove the specified resource from storage.** @param int $id * @return \Illuminate\Http\Response */
     public function destroy($id)
     {
         DB::table("roles")->where('id', $id)->delete();
-        return redirect()->route('roles.index')->with('success', 'Role deleted successfully');
+        return redirect()->route('admin.roles.index')->with('success', 'Role deleted successfully');
     }
 }
